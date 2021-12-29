@@ -15,7 +15,7 @@
     <form type ="text" name="text" action="" method="post">
 
 <textarea name="randomtext" id="" cols="30" rows="10"></textarea><br>
-<button type="submit">Submit</button>
+<button type="submit">Відправити</button>
     </form><br>
     </div>
 
