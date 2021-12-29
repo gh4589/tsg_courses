@@ -1,9 +1,6 @@
 
 <?php
 
-
- 
-
  $listofnames = trim($_GET['listofnames']);
 
  setlocale(LC_ALL, 'ua_UA.UTF-8');
