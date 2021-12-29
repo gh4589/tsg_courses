@@ -1,22 +1,41 @@
 
 <?php
 
+
+
  $listofnames = trim($_GET['listofnames']);
 
- setlocale(LC_ALL, 'ua_UA.UTF-8');
- $pattern = preg_match('/[А-Яа-я^,]+$/', $listofnames);
- if ($listofnames == $pattern){
- 
-     echo 'this is text not ok';
- 
- }else {
- 
-    $listofnames = explode(",", $listofnames);
+ $explode = explode(',', $listofnames);
 
-    sort($listofnames,SORT_FLAG_CASE|SORT_NATURAL);
+ header('Content-type: text/html; charset=utf-8');
 
-    print_r($listofnames);
-
+ $locale_time = setlocale (LC_TIME, 'ru_RU.UTF-8', 'Rus');
+ 
+ function strf_time($format, $timestamp, $locale)
+ {
+     $date_str = strftime($format, $timestamp);
+     if (strpos($locale, '1251') !== false)
+     {
+         return iconv('cp1251', 'utf-8', $date_str);
      }
- 
-     
+     else
+     {
+         return $date_str;
+     }
+ }
+
+
+ function compareByName($a,$b) {
+    if($a == $b) return 0;
+    return $a > $b ? 1 :  -1;
+  }
+
+  usort($explode, 'compareByName');
+
+echo '<pre>';
+
+print_r($explode);
+
+echo '</pre>';
+
+?>
