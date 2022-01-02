@@ -10,6 +10,22 @@
     
 
 
+<?php
+
+$M = array();
+
+for ($N = 0; $N < 2; $N++):
+  for ($i = 0; $i < 10; $i++):
+    $M[$N][$i] = rand(0, 2000);
+  endfor;
+endfor;
+ 
+echo '<pre>';
+print_r($M);
+echo '</pre>';
+?>
+
+
 
 
 </body>
