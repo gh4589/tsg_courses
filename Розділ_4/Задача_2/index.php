@@ -8,8 +8,6 @@
 </head>
 <body>
     
-
-
 <?php
 
 $M = array();
@@ -24,8 +22,6 @@ echo '<pre>';
 print_r($M);
 echo '</pre>';
 ?>
-
-
 
 
 </body>
